@@ -30,7 +30,7 @@ function Pokedex() {
   if (isLoading) {
     return <div>Loading...</div>;
   }
-
+  console.log(pokemons);
   const pokemonOffset = 0;
   const pokemonLimit = 20;
   return (
