@@ -5,3 +5,4 @@ export const SET_POKEDEX = 'SET_POKEDEX';
 export const SET_POKEMONS = 'SET_POKEMONS';
 
 export const SET_FILTER_NAME = 'SET_FILTER_NAME';
+export const SET_FILTER_TYPE = 'SET_FILTER_TYPE';
