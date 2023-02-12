@@ -25,7 +25,7 @@ const transformPokemon = (pokemonData) => pokemonData
     stats,
     id,
     name,
-    pictureUrl: sprites.other['official-artwork'].frontDefault,
+    pictureUrl: sprites.other['official-artwork'].front_default,
     types,
     weight,
   }));

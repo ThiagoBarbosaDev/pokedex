@@ -1,18 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './PokemonCard.module.scss';
+
+console.log(styles);
 
 function PokemonCard({ pokemon }) {
-  console.log(pokemon);
   return (
-    <div>
-      <span>{pokemon.id}</span>
+    <div className={ styles.container }>
+      <span>{pokemon.name}</span>
+      <img
+        className={ styles['pokemon-picture'] }
+        src={ pokemon.pictureUrl }
+        alt={ `${pokemon.name}` }
+      />
     </div>
   );
 }
 
 PokemonCard.propTypes = {
   pokemon: PropTypes.shape({
+    name: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
+    pictureUrl: PropTypes.string.isRequired,
   }).isRequired,
 };
 
