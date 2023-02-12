@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import getPokemons from '../../redux/actions/getPokemons';
 import PokemonCard from '../../components/PokemonCard/PokemonCard';
 import styles from './Pokedex.module.scss';
+import Header from '../../components/Header/Header';
 
 function Pokedex() {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ function Pokedex() {
   const pokemonLimit = 20;
   return (
     <div>
-      <h1>Pokedex</h1>
+      <Header />
       <section className={ styles.container }>
         {pokemons.slice(pokemonOffset, pokemonLimit).map((pokemon) => (
           <PokemonCard pokemon={ pokemon } key={ pokemon.id } />

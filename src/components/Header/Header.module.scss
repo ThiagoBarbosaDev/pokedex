@@ -1,0 +1,26 @@
+@import 'src/styles/variables.scss';
+
+.container {
+  background-color: $red;
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1rem solid black;
+  margin-bottom: 5rem;
+
+  .title {
+    color: white;
+    font-family: 'Carter One', sans-serif;
+    font-size: 10rem;
+  }
+}
+
+@media (max-width: 55rem) {
+  .container {
+    .title {
+      font-size: 5rem;
+    }
+  }
+}

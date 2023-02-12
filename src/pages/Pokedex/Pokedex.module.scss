@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, 25rem);
   grid-gap: 3rem;
+  justify-content: center;
   max-width: 140rem;
   margin: auto;
 }
