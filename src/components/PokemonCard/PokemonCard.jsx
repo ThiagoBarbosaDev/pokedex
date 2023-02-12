@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './PokemonCard.module.scss';
 
-console.log(styles);
-
 function PokemonCard({ pokemon }) {
   return (
     <div className={ styles.container }>
