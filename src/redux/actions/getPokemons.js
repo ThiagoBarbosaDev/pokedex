@@ -20,9 +20,18 @@ const setPokemons = (payload) => ({
   payload,
 });
 
+const capitalizeKebabCase = (string) => string.split('-').map((substring) => {
+  const capitalizedLetter = substring[0].toUpperCase();
+  const restWord = substring.slice(1);
+  return capitalizedLetter + restWord;
+}).join(' ');
+
 const transformPokemon = (pokemonData) => pokemonData
   .map(({ stats, id, name, sprites, types, weight }) => ({
-    stats,
+    stats: stats.map((stat) => ({
+      name: capitalizeKebabCase(stat.stat.name),
+      base: stat.base_stat,
+    })),
     id,
     name,
     pictureUrl: sprites.other['official-artwork'].front_default,

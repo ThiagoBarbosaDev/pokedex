@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
-import { Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import Pokedex from './pages/Pokedex/Pokedex';
 
 function App() {
   return (
     <Switch>
+      <Route path="/:id">
+        <Link to="/"> Go back </Link>
+      </Route>
       <Route path="/" component={ Pokedex } />
     </Switch>
   );

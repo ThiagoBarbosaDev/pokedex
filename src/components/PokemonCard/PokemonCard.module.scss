@@ -1,5 +1,4 @@
 @import 'src/styles/variables.scss';
-@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
 
 .container {
   height: 35rem;
@@ -11,6 +10,7 @@
   font-size: 3rem;
   color: white;
   text-align: center;
+  text-decoration: none;
 
   box-sizing: border-box;
   background-color: $blue;
@@ -26,4 +26,29 @@
     max-width: 200px;
     max-height: 200px;
   }
+
+  .stats-container {
+    all: unset;
+    box-sizing: border-box;
+    display: none;
+    grid-template-rows: repeat(6, 1fr);
+    font-size: 1rem;
+    background-color: black;
+    border-radius: 50%;
+    line-height: 2rem;
+    width: 14rem;
+    height: 14rem;
+    margin-top: -14rem;
+    padding: 1rem;
+    transform: translate(10.5rem, 7.5rem);
+  }
+}
+
+.container:hover {
+  box-shadow: inset 0 0 0 1.5rem $blue;
+  cursor: pointer;
+
+    .stats-container {
+      display: grid;
+    }
 }

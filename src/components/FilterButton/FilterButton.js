@@ -6,7 +6,6 @@ import { setFilterType } from '../../redux/actions/filterActions';
 function FilterButton({ type }) {
   const filterType = useSelector((state) => state.filterReducer.filterType);
   const dispatch = useDispatch();
-  console.log(filterType);
   return (
     <button
       type="button"
