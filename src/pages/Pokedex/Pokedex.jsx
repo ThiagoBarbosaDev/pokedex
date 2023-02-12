@@ -4,12 +4,14 @@ import getPokemons from '../../redux/actions/getPokemons';
 import PokemonCard from '../../components/PokemonCard/PokemonCard';
 import styles from './Pokedex.module.scss';
 import Header from '../../components/Header/Header';
+import SearchBar from '../../components/SearchBar/SearchBar';
 
 function Pokedex() {
   const dispatch = useDispatch();
   const { pokedex, isLoading, pokemons } = useSelector(
     (state) => state.pokemonReducer,
   );
+  const { search } = useSelector((state) => state.filterReducer);
 
   useEffect(() => {
     if (!pokedex.length) {
@@ -26,10 +28,16 @@ function Pokedex() {
   return (
     <div>
       <Header />
+      <SearchBar />
       <section className={ styles.container }>
-        {pokemons.slice(pokemonOffset, pokemonLimit).map((pokemon) => (
-          <PokemonCard pokemon={ pokemon } key={ pokemon.id } />
-        ))}
+        {
+          pokemons
+            .filter((pokemon) => pokemon.name.includes(search))
+            .slice(pokemonOffset, pokemonLimit)
+            .map((pokemon) => (
+              <PokemonCard pokemon={ pokemon } key={ pokemon.id } />
+            ))
+        }
       </section>
     </div>
   );

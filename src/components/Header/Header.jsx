@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './Header.module.scss';
 
-console.log(styles);
-
 function Header() {
   return (
     <header className={ styles.container }>
