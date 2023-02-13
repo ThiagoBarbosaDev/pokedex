@@ -44,6 +44,11 @@ const convertHeight = (decimeters) => {
   return formatHeight(feet);
 };
 
+const zeroFill = (number) => {
+  const maxIntegerDigits = -3;
+  return `00${number}`.slice(maxIntegerDigits);
+};
+
 function PokemonDetails() {
   const { name } = useParams();
   const dispatch = useDispatch();
@@ -59,22 +64,35 @@ function PokemonDetails() {
     <div className={ styles.container }>
       <Header />
       <section className={ styles['pokedex-container'] }>
-        <div>
+        <div className={ styles['image-container'] }>
           <img
+            className={ styles['pokemon-image'] }
             src={ details.pictureUrl }
             alt={ `${details.name} generation one sprite` }
           />
-          <span>{details.number}</span>
-        </div>
-        <div>
-          <span>{details.name}</span>
           <span>
-            {details?.genus?.replace('Pokémon', '')?.replace(' ', '')}
+            <span className={ styles.bold }>No.</span>
+            {` ${zeroFill(details.number)}`}
           </span>
-          <span>{convertHeight(details.height)}</span>
-          <span>{convertWeight(details.weight)}</span>
         </div>
-        <div>
+        <div className={ styles['data-container'] }>
+          <span>{details.name?.toUpperCase()}</span>
+          <span>
+            {details?.genus
+              ?.replace('Pokémon', '')
+              ?.replace(' ', '')
+              ?.toUpperCase()}
+          </span>
+          <span>
+            <span className={ styles.bold }>{'HT '}</span>
+            {convertHeight(details.height)}
+          </span>
+          <span>
+            <span className={ styles.bold }>{'WT '}</span>
+            {convertWeight(details.weight)}
+          </span>
+        </div>
+        <div className={ styles['text-container'] }>
           <p>{details.flavorText}</p>
         </div>
       </section>
