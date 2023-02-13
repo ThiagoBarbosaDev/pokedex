@@ -62,11 +62,11 @@ function PokemonDetails() {
             src={ details.pictureUrl }
             alt={ `${details.name} generation one sprite` }
           />
-          <span>{ details.number }</span>
+          <span>{details.number}</span>
         </div>
         <div>
           <span>{details.name}</span>
-          <span>{details.genus.replace('Pokémon', '').replace(' ', '')}</span>
+          <span>{details?.genus?.replace('Pokémon', '')?.replace(' ', '')}</span>
           <span>{convertHeight(details.height)}</span>
           <span>{convertWeight(details.weight)}</span>
         </div>
