@@ -1,5 +1,6 @@
 import React from 'react';
 import FilterButton from '../FilterButton/FilterButton';
+import styles from './TypeFilterBar.module.scss';
 
 const POKEMON_TYPES = [
   'bug',
@@ -21,10 +22,10 @@ const POKEMON_TYPES = [
 
 function TypeFilterBar() {
   return (
-    <div>
-      {
-        POKEMON_TYPES.map((type) => <FilterButton type={ type } key={ type } />)
-      }
+    <div className={ styles.container }>
+      {POKEMON_TYPES.map((type) => (
+        <FilterButton type={ type } key={ type } />
+      ))}
     </div>
   );
 }

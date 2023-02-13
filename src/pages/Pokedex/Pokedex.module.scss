@@ -1,3 +1,22 @@
+.wrapper {
+  background-image: url('https://wallpapercave.com/wp/wp10425519.png');
+  background-size: cover;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+.filters-container {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  box-sizing: border-box;
+  padding: 4rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, 25rem);

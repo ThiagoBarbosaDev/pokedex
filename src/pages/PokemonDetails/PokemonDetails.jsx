@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import convert from 'convert-units';
 import getDetails from '../../redux/actions/getDetails';
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import styles from './PokemonDetails.module.scss';
 
 // todo create utilsfolder
 // gen1 pokedex weight format: 15.0 lb
@@ -54,9 +56,9 @@ function PokemonDetails() {
   }
 
   return (
-    <div>
+    <div className={ styles.container }>
       <Header />
-      <section>
+      <section className={ styles['pokedex-container'] }>
         <div>
           <img
             src={ details.pictureUrl }
@@ -66,7 +68,9 @@ function PokemonDetails() {
         </div>
         <div>
           <span>{details.name}</span>
-          <span>{details?.genus?.replace('Pokémon', '')?.replace(' ', '')}</span>
+          <span>
+            {details?.genus?.replace('Pokémon', '')?.replace(' ', '')}
+          </span>
           <span>{convertHeight(details.height)}</span>
           <span>{convertWeight(details.weight)}</span>
         </div>
@@ -74,6 +78,7 @@ function PokemonDetails() {
           <p>{details.flavorText}</p>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

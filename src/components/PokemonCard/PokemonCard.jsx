@@ -4,18 +4,20 @@ import styles from './PokemonCard.module.scss';
 
 function PokemonCard({ pokemon }) {
   return (
-    <Link className={ styles.container } to={ `/${pokemon.name.toLowerCase()}` }>
-      <span>{pokemon.name}</span>
-      <img
-        className={ styles['pokemon-picture'] }
-        src={ pokemon.pictureUrl }
-        alt={ `${pokemon.name}` }
-      />
-      <div className={ styles['stats-container'] }>
-        { pokemon.stats
-          .map((stat) => <span key={ stat.name }>{`${stat.name}: ${stat.base}`}</span>)}
-      </div>
-    </Link>
+    <div className={ styles.wrapper }>
+      <Link className={ styles.container } to={ `/${pokemon.name.toLowerCase()}` }>
+        <span>{pokemon.name}</span>
+        <img
+          className={ styles['pokemon-picture'] }
+          src={ pokemon.pictureUrl }
+          alt={ `${pokemon.name}` }
+        />
+        <div className={ styles['stats-container'] }>
+          { pokemon.stats
+            .map((stat) => <span key={ stat.name }>{`${stat.name}: ${stat.base}`}</span>)}
+        </div>
+      </Link>
+    </div>
   );
 }
 
