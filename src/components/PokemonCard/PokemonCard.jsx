@@ -4,7 +4,7 @@ import styles from './PokemonCard.module.scss';
 
 function PokemonCard({ pokemon }) {
   return (
-    <Link className={ styles.container } to={ `/${pokemon.id}` }>
+    <Link className={ styles.container } to={ `/${pokemon.name.toLowerCase()}` }>
       <span>{pokemon.name}</span>
       <img
         className={ styles['pokemon-picture'] }

@@ -16,21 +16,21 @@ const filterByType = (pokemon, filterType) => {
 
 function Pokedex() {
   const dispatch = useDispatch();
-  const { pokedex, isLoading, pokemons } = useSelector(
+  const { isLoading, pokemons } = useSelector(
     (state) => state.pokemonReducer,
   );
   const filterType = useSelector((state) => state.filterReducer.filterType);
   const { search } = useSelector((state) => state.filterReducer);
 
   useEffect(() => {
-    if (!pokedex.length) {
+    if (!pokemons.length) {
       dispatch(getPokemons());
     }
   }, []);
   if (isLoading) {
     return <div>Loading...</div>;
   }
-  console.log(pokemons);
+
   const pokemonOffset = 0;
   const pokemonLimit = 20;
   return (

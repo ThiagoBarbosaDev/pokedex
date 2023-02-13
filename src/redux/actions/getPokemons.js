@@ -1,4 +1,4 @@
-import { SET_IS_LOADING, SET_POKEDEX, SET_POKEMONS } from '.';
+import { SET_IS_ERROR, SET_IS_LOADING, SET_POKEDEX, SET_POKEMONS } from '.';
 
 const setIsLoading = (payload) => ({
   type: SET_IS_LOADING,
@@ -33,7 +33,7 @@ const transformPokemon = (pokemonData) => pokemonData
       base: stat.base_stat,
     })),
     id,
-    name,
+    name: capitalizeKebabCase(name),
     pictureUrl: sprites.other['official-artwork'].front_default,
     types: types.map((type) => type.type.name),
     weight,
