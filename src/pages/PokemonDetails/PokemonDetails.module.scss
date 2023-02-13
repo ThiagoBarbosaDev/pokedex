@@ -1,9 +1,85 @@
+@import 'src/styles/variables.scss';
+
+.bold {
+  font-weight: 900;
+}
+
 .container {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  justify-items: center;
 
   .pokedex-container {
-    min-height: 100%;    
+    margin-top: 15rem;
+    background-color: #fff4fc;  
+    height: 40vh;
+    width: 40vh;
+    border: 1rem solid black;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    font-size: 2rem;
+    font-family: $retro-font;
+    line-height: 3rem;
+    color: #151515;
+
+    .image-container {
+      grid-column: span 2;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .pokemon-image {
+        transform: scaleX(-1);
+        width: 100%;
+        mix-blend-mode:darken;
+      } 
+    }
+    .data-container {
+      grid-column: span 3;
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 0 0 0;
+    }
+
+    .text-container {
+      box-sizing: border-box;
+      height: 100%;
+      border-top: 0.75rem solid black;
+      padding: 5%;
+      line-height: 4rem;
+      letter-spacing: 0.2rem;
+      word-spacing: 0.3rem;
+      grid-column: span 5;
+      overflow-y: scroll;
+      background-clip: content-box;
+      text-overflow: ellipsis;
+    }
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $gray; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(187, 187, 187); 
 }

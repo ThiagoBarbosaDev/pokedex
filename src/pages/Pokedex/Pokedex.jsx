@@ -42,7 +42,9 @@ function Pokedex() {
         </div>
         <section className={ styles.container }>
           {pokemons
-            .filter((pokemon) => pokemon.name.includes(search))
+            .filter((pokemon) => pokemon.name
+              .toLowerCase()
+              .includes(search.toLowerCase()))
             .filter((pokemon) => filterByType(pokemon, filterType))
             .slice(pokemonOffset, pokemonLimit)
             .map((pokemon) => (
