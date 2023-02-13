@@ -7,8 +7,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1rem solid black;
-  margin-bottom: 10rem;
+  border-bottom: $outline-borders;
+  // margin-bottom: 10rem;
 
   .title {
     color: white;
@@ -29,7 +29,7 @@
   position: absolute;
   transform: translate(0, 10rem);
   border-radius: 50%;
-  border: 1rem solid black;
+  border: $outline-borders;
 }
 
 @media (max-width: 55rem) {
