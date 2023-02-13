@@ -31,10 +31,13 @@
       align-items: center;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: space-around;
+      align-items: center;
       .pokemon-image {
+        padding-top: 3rem;
+        padding-right: 1rem;
         transform: scaleX(-1);
-        width: 100%;
+        width: 80%;
         mix-blend-mode:darken;
       } 
     }
@@ -44,7 +47,7 @@
       grid-template-rows: repeat(4, 1fr);
       justify-content: center;
       align-items: center;
-      padding: 3rem 0 0 0;
+      padding-top: 3rem;
     }
 
     .text-container {
