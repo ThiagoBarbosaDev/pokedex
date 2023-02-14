@@ -4,8 +4,8 @@ import getPokemons from '../../redux/actions/getPokemons';
 import PokemonCard from '../../components/PokemonCard/PokemonCard';
 import styles from './Pokedex.module.scss';
 import Header from '../../components/Header/Header';
-import SearchBar from '../../components/SearchBar/SearchBar';
 import TypeFilterBar from '../../components/TypeFilterBar/TypeFilterBar';
+import SearchBar from '../../components/SearchBar/SearchBar';
 import Footer from '../../components/Footer/Footer';
 
 const filterByType = (pokemon, filterType) => {
@@ -37,8 +37,8 @@ function Pokedex() {
       <Header />
       <main className={ styles.wrapper }>
         <div className={ styles['filters-container'] }>
-          <SearchBar />
           <TypeFilterBar />
+          <SearchBar />
         </div>
         <section className={ styles.container }>
           {pokemons

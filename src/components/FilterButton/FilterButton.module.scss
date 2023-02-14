@@ -1,4 +1,65 @@
+@import 'src/styles/variables.scss';
+
 .container {
+  all: unset;
   height: 10rem;
   width: 10rem;
+  font-family: $type-font;
+  text-align: center;
+  font-size: 1.5rem;
+  border-radius: 100%;
+  border-radius: 2px solid black;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.container:hover {
+  border: 5px solid black;
+  transition: ease-in-out 100ms;
+}
+
+.container:nth-child(1) {
+  background: linear-gradient(135deg, rgba(212,252,136,1) 0%, rgba(120,220,84,1) 100%);
+}
+.container:nth-child(2) {
+  background: linear-gradient(135deg, rgba(255,180,220,1) 0%, rgba(255,84,156,1) 100%);
+}
+.container:nth-child(3) {
+  background: linear-gradient(135deg, rgba(255,252,92,1) 0%, rgba(216,148,54,1) 100%);
+}
+.container:nth-child(4) {
+  background: linear-gradient(135deg, rgba(255,102,79,1) 0%, rgba(186,112,93,1) 100%);
+}
+.container:nth-child(5) {
+  background: linear-gradient(135deg, rgba(252,140,64,1) 0%, rgba(224,68,36,1) 100%);
+}
+.container:nth-child(6) {
+  background: linear-gradient(135deg, rgba(88,248,252,1) 0%, rgba(8,140,220,1) 100%);
+}
+.container:nth-child(7) {
+  background: linear-gradient(135deg, rgb(235, 171, 255) 0%, rgb(194, 52, 237) 100%);
+}
+.container:nth-child(8) {
+  background: linear-gradient(135deg, rgba(10,245,119,1) 0%, rgba(37,198,112,1) 100%);
+}
+.container:nth-child(9) {
+  background: linear-gradient(135deg, rgba(255,228,148,1) 0%, rgba(216,172,116,1) 100%);
+}
+.container:nth-child(10) {
+  background: linear-gradient(135deg, rgba(232,252,252,1) 0%, rgba(192,252,252,1) 100%);
+}
+.container:nth-child(11) {
+  background: linear-gradient(135deg, rgba(232,212,204,1) 0%, rgba(200,180,156,1) 100%);
+}
+.container:nth-child(12) {
+  background: linear-gradient(135deg, rgba(210,255,183,1) 0%, rgba(91,167,45,1) 100%);
+}
+.container:nth-child(13) {
+  background: linear-gradient(135deg, rgba(240,108,188,1) 0%, rgba(216,44,172,1) 100%);
+}
+.container:nth-child(14) {
+  background: linear-gradient(135deg, rgba(254,215,129,1) 0%, rgba(171,102,28,1) 100%);
+}
+.container:nth-child(15) {
+  background: linear-gradient(135deg, rgba(0,228,255,1) 0%, rgb(85, 167, 255) 100%);
 }
