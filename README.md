@@ -33,7 +33,8 @@ Aplicação é testada pela React Testing Library.
 ## Instalação da aplicação
 
 ### Pré Requisitos:
-* Node v16^
+* Node 16^
+* npm 8.5.0^
 
 ### Rodando a aplicação localmente
 <br>
