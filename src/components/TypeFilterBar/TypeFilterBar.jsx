@@ -1,6 +1,8 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import FilterButton from '../FilterButton/FilterButton';
 import styles from './TypeFilterBar.module.scss';
+import { setFilterType } from '../../redux/actions/filterActions';
 
 const POKEMON_TYPES = [
   'bug',
@@ -21,6 +23,12 @@ const POKEMON_TYPES = [
 ];
 
 function TypeFilterBar() {
+  const dispatch = useDispatch();
+  const handleReset = (event) => {
+    event.preventDefault();
+    dispatch(setFilterType(''));
+  };
+
   return (
     <div className={ styles.wrapper }>
       <h2 className={ styles['filter-title'] }>Filter By Type</h2>
@@ -29,11 +37,11 @@ function TypeFilterBar() {
           <FilterButton type={ type } key={ type } />
         ))}
       </div>
-      <div className={ styles.controls }>
-        <button type="button" className={ styles['reset-button'] }>
+      <form className={ styles.controls } onSubmit={ handleReset }>
+        <button type="submit" className={ styles['reset-button'] }>
           Reset
         </button>
-      </div>
+      </form>
     </div>
   );
 }
