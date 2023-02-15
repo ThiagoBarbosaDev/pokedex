@@ -21,6 +21,12 @@ O projeto tem duas páginas:
 As páginas foram implementadas com responsividade, utilizando css modules e sass na estilização.
 
 Estado global utilizando redux onde as requisições são feitas por thunks.
+
+Aplicação é testada pela React Testing Library.
+
+**cobertura**:
+
+<img src="https://i.imgur.com/Kvxo7xA.png" alt="cobertura do projeto"/>
 </br>
 </br>
 
@@ -71,3 +77,27 @@ npm start
 ```
 http://localhost:3000
 ```
+
+<br>
+
+### Rodando testes de integração
+
+1. Abra o terminal na raíz do projeto
+   
+2. Digite o comando para rodar os testes de integração:
+
+```
+npm test
+```
+
+<br>
+
+### Rodando cobertura dos testes
+
+1. Abra o terminal na raíz do projeto
+   
+2. Digite o comando para rodar os testes de integração:
+```
+npm run test:coverage
+```
+

@@ -11,6 +11,7 @@ function FilterButton({ type }) {
   // fazer botão agnostico
   // fazer texttransform capitalize na linha 20
   // styles[variant]; passa o estilo por props pelo pai
+  // usar classnames pra sinalizar que está ativo
   return (
     <button
       className={ styles.container }
