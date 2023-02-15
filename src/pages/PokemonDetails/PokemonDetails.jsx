@@ -7,7 +7,6 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import styles from './PokemonDetails.module.scss';
 
-// todo create utilsfolder
 // gen1 pokedex weight format: 15.0 lb
 const convertWeight = (hectogram) => {
   const hectogramToKilogram = 10;
@@ -34,7 +33,7 @@ const formatHeight = (feet) => {
   return `${displayFeet}' ${displayInches}"`;
 };
 
-// gen1 pokedex height format: 7' 04"
+// gen1 pokedex height format: 7' 04";
 const convertHeight = (decimeters) => {
   const meterToDecimeter = 10;
   const feet = convert(decimeters / meterToDecimeter)
