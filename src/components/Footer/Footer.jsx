@@ -13,7 +13,9 @@ function Footer() {
           </span>
           <span>
             <FaWhatsapp className={ styles['contact-icon'] } />
-            {'  (61) 98100 7636'}
+            <a href="https://wa.me/61981007636?text=Olá!%20:)%20me%20chamo%20Thiago%20Barbosa.%20Sou%20desenvolvedor%20fullstack,%20com%20coração%20em%20frontend,%20posso%20ajudar?”">
+              {'  (61) 98100 7636'}
+            </a>
           </span>
         </div>
         <span className={ styles.me }>Thiago Barbosa</span>
