@@ -7,6 +7,10 @@ import styles from './FilterButton.module.scss';
 function FilterButton({ type }) {
   const filterType = useSelector((state) => state.filterReducer.filterType);
   const dispatch = useDispatch();
+  // não fazer função dentro do onclick
+  // fazer botão agnostico
+  // fazer texttransform capitalize na linha 20
+  // styles[variant]; passa o estilo por props pelo pai
   return (
     <button
       className={ styles.container }
