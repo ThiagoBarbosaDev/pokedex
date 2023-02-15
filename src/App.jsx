@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './styles/_globals.scss';
 import { Route, Switch } from 'react-router-dom';
 import Pokedex from './pages/Pokedex/Pokedex';
 import PokemonDetails from './pages/PokemonDetails/PokemonDetails';
