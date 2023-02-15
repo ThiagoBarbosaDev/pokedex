@@ -5,7 +5,7 @@ Este repositório aborda os itens referentes ao desafio técnico da MaxMilhas pa
 
 
 ## Dependências
-* **Dependencias**: React, React Router, Redux, Redux Thunk, classnames, React Icons.
+* **Dependencias**: React, React Router, Redux, Redux Thunk, React Icons.
 
 * **Dependencias de desenvolvimento**: ESLint, SASS.  
 </br>
@@ -33,9 +33,8 @@ Aplicação é testada pela React Testing Library.
 ## Instalação da aplicação
 
 ### Pré Requisitos:
-
-* Node v16^
-* Git
+* Node 16^
+* npm 8.5.0^
 
 ### Rodando a aplicação localmente
 <br>
