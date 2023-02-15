@@ -1,0 +1,36 @@
+@import 'src/styles/variables.scss';
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  text-align: center;
+  font-size: 5rem;
+  align-items: center;
+  justify-content: center;
+  font-family: $retro-font;
+  min-height: 55vh;
+  .loading {
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #007aff;
+    border-radius: 50%;
+    width: 30rem;
+    height: 30rem;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@media (max-width: 880px) {
+  .container {
+    font-size: 3rem;
+      .loading {
+        width: 20rem;
+        height: 20rem;
+      }
+  }
+}
