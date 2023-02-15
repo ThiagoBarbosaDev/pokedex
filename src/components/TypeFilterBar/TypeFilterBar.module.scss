@@ -1,29 +1,28 @@
 @import 'src/styles/variables.scss';
-      // width: calc(100% - 4rem);
-      // criar uma div para settar o mesmo padding 
 .wrapper {
   margin: 3rem 0 10rem 0;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10rem;
   .filter-title {
     font-family: $retro-font;
     width: 100% ;
     text-align: center;
-    font-size: 5rem;
+    font-size: 4rem;
   }
   .controls {
     display: flex;
     flex-direction: column;
     .reset-button {
-      all: unset;
       box-sizing: border-box;
-      width: calc(100% - 4rem);
+      width: 100%;
       height: 5rem;
       text-align: center;
       background-color: black;
       color: white;
       font-family: $retro-font;
       border-radius: 5rem;
-      margin: 2rem 2rem 4rem 2rem;
       cursor: pointer;
     }
 
@@ -34,12 +33,26 @@
   }
   .container {
     display: grid;
-    padding: 2rem;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 2rem;
     max-width: 130rem;
     box-sizing: border-box;
     place-items: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .wrapper{
+    gap: 5rem;
+    margin: 0 0 6rem 0;
+      .filter-title {
+        font-size: 2.5rem;
+      }
+
+      .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+      }
   }
 }

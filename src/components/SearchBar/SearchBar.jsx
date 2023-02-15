@@ -25,10 +25,6 @@ function SearchBar() {
         onChange={ (event) => setSearch(event.target.value) }
         placeholder="Search By Name"
       />
-      {/* <div
-        className={ styles['search-button'] }
-      >
-      </div> */}
       <FaSearch className={ styles['search-icon'] } />
     </section>
   );

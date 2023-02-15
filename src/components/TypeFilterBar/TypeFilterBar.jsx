@@ -23,18 +23,16 @@ const POKEMON_TYPES = [
 function TypeFilterBar() {
   return (
     <div className={ styles.wrapper }>
-      <div>
-        <h2 className={ styles['filter-title'] }>Filter By Type</h2>
-        <div className={ styles.container }>
-          {POKEMON_TYPES.map((type) => (
-            <FilterButton type={ type } key={ type } />
-          ))}
-        </div>
-        <div className={ styles.controls }>
-          <button type="button" className={ styles['reset-button'] }>
-            Reset
-          </button>
-        </div>
+      <h2 className={ styles['filter-title'] }>Filter By Type</h2>
+      <div className={ styles.container }>
+        {POKEMON_TYPES.map((type) => (
+          <FilterButton type={ type } key={ type } />
+        ))}
+      </div>
+      <div className={ styles.controls }>
+        <button type="button" className={ styles['reset-button'] }>
+          Reset
+        </button>
       </div>
     </div>
   );
