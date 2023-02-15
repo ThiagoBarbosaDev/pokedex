@@ -7,6 +7,7 @@ import Header from '../../components/Header/Header';
 import TypeFilterBar from '../../components/TypeFilterBar/TypeFilterBar';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import Footer from '../../components/Footer/Footer';
+import Loading from '../../components/Loading/Loading';
 
 const filterByType = (pokemon, filterType) => {
   if (filterType) {
@@ -26,9 +27,6 @@ function Pokedex() {
       dispatch(getPokemons());
     }
   }, []);
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
 
   const pokemonOffset = 0;
   const pokemonLimit = 20;
@@ -36,21 +34,25 @@ function Pokedex() {
     <>
       <Header />
       <main className={ styles.wrapper }>
-        <div className={ styles['filters-container'] }>
-          <TypeFilterBar />
-          <SearchBar />
-        </div>
-        <section className={ styles.container }>
-          {pokemons
-            .filter((pokemon) => pokemon.name
-              .toLowerCase()
-              .includes(search.toLowerCase()))
-            .filter((pokemon) => filterByType(pokemon, filterType))
-            .slice(pokemonOffset, pokemonLimit)
-            .map((pokemon) => (
-              <PokemonCard pokemon={ pokemon } key={ pokemon.id } />
-            ))}
-        </section>
+        { isLoading ? <Loading /> : (
+          <>
+            <div className={ styles['filters-container'] }>
+              <TypeFilterBar />
+              <SearchBar />
+            </div>
+            <section className={ styles.container }>
+              {pokemons
+                .filter((pokemon) => pokemon.name
+                  .toLowerCase()
+                  .includes(search.toLowerCase()))
+                .filter((pokemon) => filterByType(pokemon, filterType))
+                .slice(pokemonOffset, pokemonLimit)
+                .map((pokemon) => (
+                  <PokemonCard pokemon={ pokemon } key={ pokemon.id } />
+                ))}
+            </section>
+          </>
+        )}
       </main>
       <Footer />
     </>

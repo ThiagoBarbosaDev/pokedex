@@ -6,6 +6,7 @@ import getDetails from '../../redux/actions/getDetails';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import styles from './PokemonDetails.module.scss';
+import Loading from '../../components/Loading/Loading';
 
 // gen1 pokedex weight format: 15.0 lb
 const convertWeight = (hectogram) => {
@@ -55,46 +56,47 @@ function PokemonDetails() {
   useEffect(() => {
     dispatch(getDetails(name));
   }, [name]);
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <div className={ styles.container }>
       <Header />
-      <section className={ styles['pokedex-container'] }>
-        <div className={ styles['image-container'] }>
-          <img
-            className={ styles['pokemon-image'] }
-            src={ details.pictureUrl }
-            alt={ `${details.name} generation one sprite` }
-          />
-          <span>
-            <span className={ styles.bold }>No.</span>
-            {` ${zeroFill(details.number)}`}
-          </span>
-        </div>
-        <div className={ styles['data-container'] }>
-          <span>{details.name?.toUpperCase()}</span>
-          <span>
-            {details?.genus
-              ?.replace('Pokémon', '')
-              ?.replace(' ', '')
-              ?.toUpperCase()}
-          </span>
-          <span>
-            <span className={ styles.bold }>{'HT '}</span>
-            {convertHeight(details.height)}
-          </span>
-          <span>
-            <span className={ styles.bold }>{'WT '}</span>
-            {convertWeight(details.weight)}
-          </span>
-        </div>
-        <div className={ styles['text-container'] }>
-          <p>{details.flavorText}</p>
-        </div>
-      </section>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <section className={ styles['pokedex-container'] }>
+          <div className={ styles['image-container'] }>
+            <img
+              className={ styles['pokemon-image'] }
+              src={ details.pictureUrl }
+              alt={ `${details.name} generation one sprite` }
+            />
+            <span>
+              <span className={ styles.bold }>No.</span>
+              {` ${zeroFill(details.number)}`}
+            </span>
+          </div>
+          <div className={ styles['data-container'] }>
+            <span>{details.name?.toUpperCase()}</span>
+            <span>
+              {details?.genus
+                ?.replace('Pokémon', '')
+                ?.replace(' ', '')
+                ?.toUpperCase()}
+            </span>
+            <span>
+              <span className={ styles.bold }>{'HT '}</span>
+              {convertHeight(details.height)}
+            </span>
+            <span>
+              <span className={ styles.bold }>{'WT '}</span>
+              {convertWeight(details.weight)}
+            </span>
+          </div>
+          <div className={ styles['text-container'] }>
+            <p>{details.flavorText}</p>
+          </div>
+        </section>
+      )}
       <Footer />
     </div>
   );
