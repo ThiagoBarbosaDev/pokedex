@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-// 20230215015157
 // https://pokeapi.co/api/v2/pokemon-species/bulbasaur
 
 const bulbasaurSpeciesMock = {

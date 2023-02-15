@@ -2,6 +2,8 @@
 
 .container {
   height: 30rem;
+  width: 100%;
+  box-sizing: border-box;
   background-color: $red;
   border-top: $outline-borders;
   color: black;

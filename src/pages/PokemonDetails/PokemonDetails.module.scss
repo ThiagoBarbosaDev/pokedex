@@ -5,16 +5,18 @@
 }
 
 .container {
+  box-sizing: border-box;
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
   justify-items: center;
 
   .pokedex-container {
+    box-sizing: border-box;
     background-color: #fff4fc;  
-    height: 40vh;
     margin: auto;
-    width: 40vh;
+    height: 50rem;
+    width: 50rem;
     border: 1rem solid black;
     border-radius: 1rem;
     display: grid;
@@ -85,4 +87,16 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(187, 187, 187); 
+}
+
+@media (max-width: 530px) {
+  .container {
+
+    .pokedex-container {
+      height: 100%;
+      width: 100%;
+      border-radius: 0;
+      font-size: 1.5rem;
+    }
+  }
 }
