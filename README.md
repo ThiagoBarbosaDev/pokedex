@@ -1,5 +1,5 @@
-# Processo Seletivo MaxMilhas - Pessoa Desenvolvedora Frontend - Desafio Técnico
-Este repositório aborda os itens referentes ao desafio técnico da MaxMilhas para o cargo de Pessoa Desenvolvedora Front.
+# Pokedex
+Aplicação que consome a PokeAPI. Esse repositório foi originalmente criado para um desafio técnico.
 
 >[Clique aqui para acessar o deploy do projeto no navegador](pokedex-mocha-tau.vercel.app/)
 
