@@ -45,7 +45,6 @@ Aplicação é testada pela React Testing Library.
 git clone https://github.com/ThiagoBarbosaDev/pokedex
 ```
 
-<br>
 
 2. Entre na pasta do repositório referente ao projeto
 
@@ -53,15 +52,11 @@ git clone https://github.com/ThiagoBarbosaDev/pokedex
 cd pokedex
 ```
 
-<br>
-
 3. Instale as dependência
 
 ```
 npm install
 ```
-
-<br>
 
 4. Rode a aplicação
 
@@ -77,7 +72,6 @@ npm start
 http://localhost:3000
 ```
 
-<br>
 
 ### Rodando testes de integração
 
